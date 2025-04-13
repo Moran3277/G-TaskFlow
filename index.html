@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaskFlow - Gestor de Tareas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>TaskFlow - Gestor de Tareas</h1>
+  <div class="board">
+    <div class="column" id="todo">
+      <h2>Por hacer</h2>
+      <ul id="todo-list"></ul>
+      <input type="text" id="new-task" placeholder="Nueva tarea...">
+      <button onclick="addTask()">Agregar</button>
+    </div>
+    <div class="column" id="in-progress">
+      <h2>En proceso</h2>
+      <ul id="in-progress-list"></ul>
+    </div>
+    <div class="column" id="done">
+      <h2>Finalizadas</h2>
+      <ul id="done-list"></ul>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
