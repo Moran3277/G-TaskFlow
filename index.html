@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TaskFlow - Gestor de Tareas</title>
+  <title>G-TaskFlow - Gestor de Tareas</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -11,27 +11,33 @@
   <header>
     <h1>🧩 G-TaskFlow</h1>
     <p>Organiza tus tareas de forma clara y eficiente</p>
+    <button id="toggle-theme">🌙 Modo Oscuro</button>
   </header>
 
   <main class="board">
-    <section class="column" id="todo">
+    <section class="column" id="todo" ondragover="allowDrop(event)" ondrop="drop(event)">
       <h2>📋 Por hacer</h2>
       <ul id="todo-list" class="task-list"></ul>
       <div class="task-input">
-        <input type="text" id="new-task" placeholder="Nueva tarea..." />
+        <input type="text" id="new-task" placeholder="Nueva tarea... #urgente #personal" />
         <button onclick="addTask()">Agregar</button>
       </div>
     </section>
-    <section class="column" id="in-progress">
+
+    <section class="column" id="in-progress" ondragover="allowDrop(event)" ondrop="drop(event)">
       <h2>⏳ En proceso</h2>
       <ul id="in-progress-list" class="task-list"></ul>
     </section>
-    <section class="column" id="done">
+
+    <section class="column" id="done" ondragover="allowDrop(event)" ondrop="drop(event)">
       <h2>✅ Finalizadas</h2>
       <ul id="done-list" class="task-list"></ul>
     </section>
   </main>
 
+  <div id="toast" class="toast"></div>
+
   <script src="app.js"></script>
 </body>
 </html>
+
