@@ -1,4 +1,4 @@
-name: Deploy TaskFlow
+name: Deploy G-TaskFlow
 
 on:
   push:
