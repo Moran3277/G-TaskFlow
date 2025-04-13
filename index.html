@@ -6,6 +6,9 @@
   <title>G-TaskFlow - Gestor de Tareas</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon-192.png" type="image/png">
+  <meta name="theme-color" content="#2e86de">
 </head>
 <body>
   <header>
@@ -38,6 +41,14 @@
   <div id="toast" class="toast"></div>
 
   <script src="app.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("service-worker.js")
+        .then(() => console.log("✅ Service Worker registrado"))
+        .catch(error => console.log("❌ Error registrando SW:", error));
+    }
+  </script>
+
 </body>
 </html>
 
